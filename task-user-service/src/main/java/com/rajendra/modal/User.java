@@ -1,14 +1,14 @@
 package com.rajendra.modal;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Getter
+@Setter
 @Table(name="users")
 public class User {
     @Id
@@ -16,7 +16,17 @@ public class User {
     private Long id;
 
     private String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     private String email;
+
     private String role;
     private String fullName;
 }
